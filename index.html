@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Password Validation</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            background-color: #F7F8FD;
+            padding-top: 100px;
+        }
+
+        .form-container {
+            width: 600px;
+            background-color: #E8EBF5;
+            padding: 20px;
+            margin: 0 auto;
+        }
+
+        form {
+            background-color: white;
+            padding: 20px;
+        }
+
+        form h4 {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        hr {
+            margin: 20px 0;
+            background-color: #ccc;
+            height: 1px;
+            border: 0;
+        }
+
+
+        .button-holder{
+            margin: 30px 0;
+            text-align: center;
+        }
+        .submit-btn {
+            background-color: #1D273D;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 3px;
+            border: none;
+            color: white;
+        }
+
+        form input {
+            width: 100%;
+            border: none;
+            padding: 10px;
+        }
+        form input:focus{
+            outline: none;
+        }
+        .input-wrapper:focus-within{
+            -webkit-box-shadow: 0px 0px 5px rgba(56, 169, 240, 0.75);
+            -moz-box-shadow: 0px 0px 5px rgba(56, 169, 240, 0.75);
+            box-shadow: 0px 0px 5px rgba(56, 169, 240, 0.75);
+        }
+
+        .input-container {
+            margin: 20px 0;
+        }
+
+        .input-wrapper{
+            display: flex;
+            align-items: center;
+            width: 100%;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+
+        }
+        .eye-icon{
+            padding-right: 10px;
+        }
+        .fa-eye-slash{
+            display: none;
+        }
+
+        .password-validation{
+            display: none;
+        }
+        .password-validation p{
+            margin-top: 40px;
+            margin-bottom: 15px;
+        }
+        .validation-list{
+            list-style: none;
+            margin-bottom: 10px;
+        }
+        .validation-list-item{
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            gap: 10px;
+            /* color: #7E9D43; */
+            color: gray;
+
+        }
+        .fa-circle-check{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<!-- <i class=".eye-icon fa-sharp fa-solid fa-eye"></i>
+<i class=".eye-icon fa-sharp fa-solid fa-eye-slash"></i> -->
+<body>
+    <div class="container">
+        <div class="form-container">
+            <form>
+                <h4>Password Validation</h4>
+                <hr>
+                <div class="input-container">
+                    <label for="username">Username</label>
+                    <div class="input-wrapper">
+                        <input type="text" name="username" id="username">
+                    </div>
+                </div>
+                <div class="input-container">
+                    <label for="password">Password</label>
+                    <div class="input-wrapper password-input">
+                        <input type="password" name="password" id="password">
+                        <i class="eye-icon fa-sharp fa-solid fa-eye"></i>
+                        <i class="eye-icon fa-sharp fa-solid fa-eye-slash"></i>
+                    </div>
+                </div>
+                <div class="button-holder">
+                    <button class="submit-btn">Submit</button>
+                </div>
+                <div class="password-validation">
+                    <p>Password Must Contain The Following</p>
+                    <ul class="validation-list">
+                        <li class="validation-list-item">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Lowercase Letters</span>
+                        </li>
+                        <li class="validation-list-item">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Uppercase Letters</span>
+                        </li>
+                        <li class="validation-list-item">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>A Number</span>
+                        </li>
+                        <li class="validation-list-item">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Atleast 8 Characters</span>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
